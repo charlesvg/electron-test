@@ -1,0 +1,31 @@
+{
+  "name": "electron-quick-start",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "rebuild": "electron-rebuild drivelist",
+    "package": "npm run rebuild && electron-packager . --out dist",
+    "deb": "npm run package && electron-installer-debian --src dist/electron-quick-start-linux-x64 --dest out --arch amd64"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^11.2.2",
+    "electron-packager": "^15.2.0",
+    "electron-rebuild": "^2.3.4"
+  },
+  "dependencies": {
+    "drivelist": "^9.2.4",
+    "electron-installer-debian": "^3.1.0"
+  }
+}
