@@ -5,9 +5,10 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "rebuild": "electron-rebuild drivelist",
+    "rebuild": ".\\node_modules\\.bin\\electron-rebuild.cmd drivelist",
     "package": "npm run rebuild && electron-packager . --out dist",
-    "deb": "npm run package && electron-installer-debian --src dist/electron-quick-start-linux-x64 --dest out --arch amd64"
+    "deb": "npm run package && electron-installer-debian --src dist/electron-quick-start-linux-x64 --dest out --arch amd64",
+    "win": "electron-installer-windows --src dist/electron-quick-start-win32-x64 --dest dist/installers/"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -21,11 +22,11 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^11.2.2",
+    "electron-installer-windows": "^3.0.0",
     "electron-packager": "^15.2.0",
     "electron-rebuild": "^2.3.4"
   },
   "dependencies": {
-    "drivelist": "^9.2.4",
-    "electron-installer-debian": "^3.1.0"
+    "drivelist": "^9.2.4"
   }
 }
